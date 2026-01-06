@@ -6,3 +6,14 @@ migrate \  -path migrations \
   -database "postgres://postgres:qwe123@localhost:5432/postgres?sslmode=disable" \
   force 3
   
+
+export conn_string="postgres://postgres:qwe123@localhost:5432/postgres" 
+
+migrate create -ext sql -dir migrations -seq not_null_phone
+migrate -path migrations -database "postgres://postgres:qwe123@localhost:5432/postgres?sslmode=disable" up
+migrate -path migrations -database "postgres://postgres:qwe123@localhost:5432/postgres?sslmode=disable" version
+
+migrate \  -path migrations \
+  -database "postgres://postgres:qwe123@localhost:5432/postgres?sslmode=disable" \
+  force 3
+  
