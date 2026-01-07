@@ -17,3 +17,20 @@ migrate \  -path migrations \
   -database "postgres://postgres:qwe123@localhost:5432/postgres?sslmode=disable" \
   force 3
   
+  docker image ls
+  docker build . -t study-http-image  
+  docker ps
+  docker exec -it wizardly_kowalevski /bin/bash
+  docker run -p 5050:5050 study-http-image
+  ^
+  |
+(-d)
+  docker logs wizardly_kowalevski
+
+  docker compose up -d application 
+                 down
+
+docker run --volume ./out:/app/out volume-test
+docker run -e POSTGRES_PASSWORD=pass postgres:18-bookworm
+
+docker container prune  
